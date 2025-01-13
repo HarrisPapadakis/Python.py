@@ -1,0 +1,16 @@
+
+# Function to display a favorite book
+
+def favorite_book(title):
+
+    # Printing a message including the provided book title
+
+    print(f"One of my favorite books is {title}.")
+
+
+
+# Calling the function with an example book title
+
+favorite_book("Alice in Wonderland")
+
+
