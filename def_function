@@ -1,0 +1,15 @@
+# Function to display a message about learning
+
+def display_message():
+
+    # Printing a message about what is being learned
+
+    print("I am learning about functions in this chapter!")
+
+
+
+# Calling the function to ensure it works correctly
+
+display_message()
+
+
