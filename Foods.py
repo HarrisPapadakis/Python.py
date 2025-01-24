@@ -1,4 +1,4 @@
-# Create a list of favorite foods and assign it to the variable `my_foods`
+# Create a list of favorite foods and assign them  to the variable `my_foods`
 my_foods = ["pizza", "pasta", "pasta", "fruits"]
 
 # Create a copy of `my_foods` and assign it to `friends_foods`
