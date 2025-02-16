@@ -1,0 +1,37 @@
+import numpy as np  # Import NumPy for numerical operations
+import IPython.display as display  # Import display utilities for Jupyter Notebook
+from matplotlib import pyplot as plt  # Import Matplotlib for plotting
+import io  # Import io for handling in-memory byte streams
+import base64  # Import base64 for encoding image data
+
+# Generate 100 random data points around 200
+ys = 200 + np.random.randn(100)
+x = [x for x in range(len(ys))]  # Create a sequence of x values
+
+# Create a figure with a small size and white background
+fig = plt.figure(figsize=(4, 3), facecolor='w')
+
+# Plot the line graph
+plt.plot(x, ys, '-')
+
+# Fill the area between the curve and y=195 where ys > 195 with green color
+plt.fill_between(x, ys, 195, where=(ys > 195), facecolor='g', alpha=0.6)
+
+# Set the title with a small font size
+plt.title("Sample Visualization", fontsize=10)
+
+# Save the plot into an in-memory buffer
+data = io.BytesIO()
+plt.savefig(data)  # Save the figure to the buffer
+
+# Encode the image in base64 format for display in Jupyter Notebook
+image = F"data:image/png;base64,{base64.b64encode(data.getvalue()).decode()}"
+
+# Define alt text for accessibility
+alt = "Sample Visualization"
+
+# Display the image using Markdown in Jupyter Notebook
+display.display(display.Markdown(F"""![{alt}]({image})"""))
+
+# Close the figure to free memory
+plt.close(fig)
