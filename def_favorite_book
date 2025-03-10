@@ -1,16 +1,11 @@
-
-# Function to display a favorite book
-
-def favorite_book(title):
-
-    # Printing a message including the provided book title
-
+def favorite_book(title: str) -> None:
+    """
+    Prints a message stating one of the favorite books.
+    
+    :param title: The title of the favorite book.
+    """
     print(f"One of my favorite books is {title}.")
 
-
-
 # Calling the function with an example book title
-
 favorite_book("Alice in Wonderland")
-
 
