@@ -1,1 +1,20 @@
-from geopy.geocoders im[prt Nominatim
+from geopy.geocoders import Nominatim
+
+def get_coords_from_address(address_string):
+    geolocator = Nominatim(user_agent="my_geocoder")
+    try:
+        location = geolocator.geocode(address_string)
+        if location:
+            print(f"Coordinates for '{address_string}':\n"
+                  f"  Latitude: {location.latitude}\n"
+                  f"  Longitude: {location.longitude}")
+            return location.address
+        else:
+            return f"Address details not found for '{address_string}'."
+    except Exception as e:
+        return f"Error: {e}"
+
+# Χρήστης δίνει όνομα τοποθεσίας
+place_name = input("Enter a place name to find the address: ")
+address_details = get_coords_from_address(place_name)
+print(f"\nFull address details: {address_details}")
