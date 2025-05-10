@@ -1,20 +1,34 @@
+# In order to work this app you need geopy library,if you need to install it go to CMD--> and type --> pip install  geopy
+
+# Import the Nominatim geocoder from the geopy library
 from geopy.geocoders import Nominatim
 
+# Function to get coordinates and address details from a given place name
 def get_coords_from_address(address_string):
+    # Create a geolocator instance with a custom user agent
     geolocator = Nominatim(user_agent="my_geocoder")
     try:
+        # Use geolocator to get location details based on the address string
         location = geolocator.geocode(address_string)
         if location:
+            # If location is found, print latitude and longitude
             print(f"Coordinates for '{address_string}':\n"
                   f"  Latitude: {location.latitude}\n"
                   f"  Longitude: {location.longitude}")
+            # Return the full address
             return location.address
         else:
+            # If no location is found, return a message
             return f"Address details not found for '{address_string}'."
     except Exception as e:
+        # If any error occurs during geocoding, return the error message
         return f"Error: {e}"
 
-# Χρήστης δίνει όνομα τοποθεσίας
+# Prompt the user to enter a place name
 place_name = input("Enter a place name to find the address: ")
+
+# Call the function and get the address details
 address_details = get_coords_from_address(place_name)
+
+# Print the full address returned by the function
 print(f"\nFull address details: {address_details}")
