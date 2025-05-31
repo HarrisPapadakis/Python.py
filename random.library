@@ -1,0 +1,18 @@
+import random
+
+# Τυχαίος ακέραιος μεταξύ 1 και 10 (και τα δύο περιλαμβάνονται)
+print(random.randint(1, 10))
+
+# Τυχαίος αριθμός κινητής υποδιαστολής μεταξύ 0 και 1
+print(random.random())
+
+# Τυχαία επιλογή από λίστα
+fruits = ['apple', 'banana', 'cherry']
+print(random.choice(fruits))
+
+# Ανακάτεμα μιας λίστας
+random.shuffle(fruits)
+print(fruits)
+
+# Επιλογή 2 τυχαίων στοιχείων από λίστα χωρίς επανάληψη
+print(random.sample(fruits, 2))
