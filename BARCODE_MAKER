@@ -1,0 +1,13 @@
+import barcode
+from barcode.writer import ImageWriter
+from IPython.display import Image, display
+
+user_data = input("Enter yhe data to encode in the barcode: ")
+
+code = barcode.get('code128', user_data, Writer = ImageWriter())
+
+filename = code.save("clcoding_barcode")
+
+display(Image(filename=filename))
+
+
