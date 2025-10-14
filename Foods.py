@@ -14,3 +14,4 @@ print(my_foods)
 print("\nMy friend's favorite foods are:")
 # Print the `friends_foods` list to display its items
 print(friends_foods)
+
