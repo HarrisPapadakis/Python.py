@@ -1,4 +1,4 @@
-# Create a list of favorite foods and assign them  to the variable `my_foods`
+# Create a list of favorite foods and assign it  to the variable `my_foods`
 my_foods = ["pizza", "burger", "hot dog", "salad", "tacos" ,"ntakos"]
 
 # Using slicing ([:]) ensures that `friends_foods` is a separate list, not just a reference to `my_foods`
@@ -15,3 +15,4 @@ print("\nMy friend's favorite foods are:")
 
 # Print the `friends_foods` list to display its items
 print(friend_foods)
+
