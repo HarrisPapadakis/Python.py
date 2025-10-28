@@ -41,3 +41,4 @@ plt.ylabel("Number of Bags")
 plt.xticks(rotation=15)
 plt.tight_layout()
 plt.show()
+
