@@ -4,10 +4,9 @@ import pandas as pd
 import time
 
 def get_season_teams(year: int):
-    """
-    Συλλέγει όλες τις ομάδες της Super League Ελλάδας για μια συγκεκριμένη σεζόν (π.χ. 2010)
-    και τις αποθηκεύει σε αρχείο CSV.
-    """
+   #Συλλέγει όλες τις ομάδες της Super League Ελλάδας για μια συγκεκριμένη σεζόν (π.χ. 2010)
+    #και τις αποθηκεύει σε αρχείο CSV.
+    
     
     base_url = f"https://www.transfermarkt.gr/super-league-1/startseite/wettbewerb/GR1/saison_id/{year}"
     headers = {"User-Agent": "Mozilla/5.0"}
@@ -47,4 +46,5 @@ if __name__ == "__main__":
     df_2010 = get_season_teams(2010)
     print(df_2010)
     time.sleep(2)
+
 
