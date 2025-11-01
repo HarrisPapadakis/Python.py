@@ -47,3 +47,4 @@ if __name__ == "__main__":
     df_2010 = get_season_teams(2010)
     print(df_2010)
     time.sleep(2)
+
