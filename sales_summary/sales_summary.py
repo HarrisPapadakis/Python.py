@@ -1,20 +1,29 @@
+'''Import απαραίτητων βιβλιοθηκών 
+Εισάγουμε τις βιβλιοθήκες Pandas, NumPy, και Matplotlib'''
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-# Load the dataset
+
+# Διαβάζουμε το αρχείο CSV και το φορτώνουμε σε ένα DataFrame
 data = pd.read_csv("sales_data1.csv")
-# Check for missing data
+
+# Ελέγχουμε αν υπάρχουν κενές τιμές στο dataset
 print("Missing Data:\n", data.isna().sum())
-# Convert Date column to datetime format
+
+# Μετατρέπουμε τη στήλη ημερομηνιών για να μπορούμε να κάνουμε χρονικές αναλύσεις
 data["Date"] = pd.to_datetime(data["Date"], format='%d/%m/%Y')
-# Add a day of the week column
+
+# Δημιουργούμε μια νέα στήλη που περιέχει την ημέρα της εβδομάδας
 data["Day_of_Week"] = data["Date"].dt.day_name()
-# Check the summary statistics
+
+# Εμφανίζουμε βασικά στατιστικά στοιχεία για τις αριθμητικές στήλες
 print("\nSummary Statistics:\n", data.describe())
-# Group by Product and calculate total revenue and quantity sold
+
+# Ομαδοποιούμε τα δεδομένα ανά προϊόν και υπολογίζουμε τα συνολικά έσοδα και την ποσότητα
 product_summary = data.groupby("Product").agg({"Revenue": "sum", "Quantity": "sum"})
 print("\nProduct Summary:\n", product_summary)
-# Plot the total revenue per product
+
+# Δημιουργούμε ένα ραβδόγραμμα για να δείξουμε τα συνολικά έσοδα ανά προϊόν
 product_summary["Revenue"].plot(kind="bar")
 plt.xlabel("Product")
 plt.ylabel("Total Revenue")
