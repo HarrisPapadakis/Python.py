@@ -34,4 +34,5 @@ plt.scatter(df['weight'], df['mpg'])
 plt.xlabel('Weight')
 plt.ylabel('Miles Per Gallon')
 plt.title('Weight vs. MPG')
+
 plt.show()
