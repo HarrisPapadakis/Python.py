@@ -29,3 +29,4 @@ plt.xlabel("Product")
 plt.ylabel("Total Revenue")
 plt.title("Total Revenue per Product")
 plt.show()
+
