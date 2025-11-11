@@ -64,7 +64,7 @@ pollutant_corr = air_quality_data[['pm25', 'no2', 'so2', 'co', 'o3']].corr()
 plt.figure(figsize=(10, 8))  # Μέγεθος του γραφήματος
 sns.heatmap(pollutant_corr, annot=True, cmap="coolwarm", linewidths=0.5)
 
-# Προσθέτουμε τίτλο στο διάγραμμα
+# Προσθήκη τίτλου  στο διάγραμμα
 plt.title("Correlation Between Pollutants")
 
 # Εμφάνιση του heatmap
