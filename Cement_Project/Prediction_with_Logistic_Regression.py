@@ -46,3 +46,4 @@ def predict_new_bag(weight, is_wet, expiration_date):
 predict_new_bag(50.0, False, "2025-08-01")
 predict_new_bag(46.5, True, "2024-03-01")
 
+
